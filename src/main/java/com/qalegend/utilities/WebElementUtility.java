@@ -11,7 +11,7 @@ public class WebElementUtility {
         element.click();
     }
     public void enterText(WebElement element,String valueToEnter){
-        element.sendKeys("Enter Value");
+        element.sendKeys(valueToEnter);
     }
     public String getElementText(WebElement element){
        return element.getText();
