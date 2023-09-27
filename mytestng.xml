@@ -7,11 +7,9 @@
     <test name="Functional Test">
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="com.qalegend.testscripts.ResetPageTest">
+            <class name="com.qalegend.testscripts.AddUserTest">
                 <methods>
-                    <exclude name="verifyUserLogin"/>
-                    <exclude name="verifyLoginPageTitle"/>
-                    <include name="verifyResetPageInvalidEmailErrorMessage"/>
+                    <include name="verifyUserCreation"/>
                 </methods>
             </class>
         </classes>

@@ -37,4 +37,23 @@ public class RandomDataUtility {
         String postalCode = faker.address().zipCode();
         return postalCode;
     }
+    public static String getEmail() {
+            Faker faker = new Faker();
+            return faker.internet().emailAddress();
+    }
+    public static String getPrefix(){
+        faker=new Faker();
+        String prefix = faker.name().prefix();
+        return prefix;
+    }
+
+    public static String getPassword() {
+        String password=faker.internet().password();
+        return password;
+    }
+    public static String getRandomNumber(){
+        faker=new Faker();
+        String number=String.valueOf(faker.number().randomDigitNotZero());
+        return number;
+    }
 }

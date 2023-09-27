@@ -20,12 +20,10 @@ public class ResetPage extends TestHelperUtility {
     WebElement resetButton;
     @FindBy(xpath = "//span[@class='help-block']//strong")
     WebElement errorMessage;
-    public void verifyEmailAddress() {
-        List<List<String>> data = ExcelUtility.excelDataReader("ResetPage");
-        String emailId=data.get(1).get(1);
+    public void enterEmailAddress(String emailId){
         webElement.enterText(email,emailId);
     }
-    public void verifyResetButton(){
+    public void clickResetButton(){
         webElement.clickOnElement(resetButton);
     }
     public String getResetErrorMessage(){

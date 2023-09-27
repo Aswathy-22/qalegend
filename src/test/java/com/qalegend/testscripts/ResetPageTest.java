@@ -6,6 +6,7 @@ import com.qalegend.pages.LoginPage;
 import com.qalegend.pages.ResetPage;
 import com.qalegend.reports.TestListener;
 import com.qalegend.utilities.ExcelUtility;
+import com.qalegend.utilities.RandomDataUtility;
 import com.qalegend.utilities.TestHelperUtility;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,12 +16,13 @@ public class ResetPageTest extends Base {
     @Test(groups = {"smoke","Regression"})
     public void verifyResetPageInvalidEmailErrorMessage(){
         extentTest.get().assignCategory("Regression");
+        String email=RandomDataUtility.getEmail();
         List<List<String>> data = ExcelUtility.excelDataReader("ResetPage");
-        LoginPage login=new LoginPage(driver);
-        ResetPage reset=login.forgotPasswordLink();
-        reset.verifyEmailAddress();
-        reset.verifyResetButton();
         String resetErrorMessage = data.get(0).get(1);
+        LoginPage login=new LoginPage(driver);
+        ResetPage reset=login.clickOnForgotPasswordLink();
+        reset.enterEmailAddress(email);
+        reset.clickResetButton();
         String actualResetErrorMessage=reset.getResetErrorMessage();
         Assert.assertEquals(actualResetErrorMessage,resetErrorMessage, "Reset Password Failed");
     }
