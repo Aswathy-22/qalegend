@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Execution Suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.qalegend.reports.TestListener"/>
+    </listeners>
+    <test name="Thread 1">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="com.qalegend.testscripts.ResetPageTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Thread 2">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="com.qalegend.testscripts.HomePageTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Thread 3">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="com.qalegend.testscripts.LoginPageTest">
+            </class>
+        </classes>
+    </test>
+</suite>

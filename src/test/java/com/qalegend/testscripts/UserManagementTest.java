@@ -14,9 +14,9 @@ import java.util.List;
 
 public class UserManagementTest extends Base {
     ThreadLocal<ExtentTest> extentTest = TestListener.getTestInstance();
-    @Test(groups = {"Sanity","Regression"})
+    @Test(groups = {"Smoke","Regression"})
     public void verifyUserManagementPanelData(){
-        extentTest.get().assignCategory("sanity");
+        extentTest.get().assignCategory("Regression");
         List<List<String>> data = ExcelUtility.excelDataReader("LoginPage");
         String userName = data.get(1).get(1);
         String passWord = data.get(2).get(1);

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 public class ResetPageTest extends Base {
     ThreadLocal<ExtentTest> extentTest = TestListener.getTestInstance();
-    @Test(groups = {"smoke","Regression"})
+    @Test(groups = {"Smoke","Regression"})
     public void verifyResetPageInvalidEmailErrorMessage(){
         extentTest.get().assignCategory("Regression");
         String email=RandomDataUtility.getEmail();

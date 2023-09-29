@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Login Suite">
+<suite name="Parallel Execution Suite" parallel="methods" thread-count="2">
     <listeners>
         <listener class-name="com.qalegend.reports.TestListener"/>
     </listeners>
-    <test name="Functional Test">
+    <test name="Thread 1">
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="com.qalegend.testscripts.ManageUserTest">
-                <methods>
-                    <include name="verifyUserDelete"/>
-                </methods>
+            <class name="com.qalegend.testscripts.LoginPageTest">
             </class>
         </classes>
     </test>

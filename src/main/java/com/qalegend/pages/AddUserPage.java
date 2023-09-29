@@ -71,6 +71,7 @@ public class AddUserPage extends TestHelperUtility {
         enterPassword(pWord);
         enterConfirmPassword(confirmPword);
         enterSalesCommissionPercentage(salesPercentage);
+        clickOnSaveButton();
         return new ManageUserPage(driver);
     }
 }

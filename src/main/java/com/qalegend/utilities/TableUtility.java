@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 public class TableUtility {
-    public static List<ArrayList<String>> get_Dynamic_TwoDimension_TablElemnts(List<WebElement> rowItems, List<WebElement> columnItems) {//return type -list of array
-        int rSize = rowItems.size() - 1;
-        int colnmSize = columnItems.size();
+    public static List<List<String>> get_Dynamic_TwoDimension_TablElemnts(List<WebElement> rowItems, List<WebElement> columnItems) {//return type -list of array
+        int rSize = rowItems.size();
+        int colnmSize = columnItems.size()-1;
         String[] columnList = new String[colnmSize / rSize];
-        List<ArrayList<String>> gridData = new ArrayList<ArrayList<String>>(); //2d array initialization
+        List<List<String>> gridData = new ArrayList<>(); //2d array initialization
         int x = 0;
         for (int i = 0; i < rSize; i++) { //each row
             for (int j = 0; j < columnList.length; j++) {//each column

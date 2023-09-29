@@ -9,4 +9,10 @@ public class dataProviderManager {
         Object[][] data= excel.dataProviderRead("InvalidLoginCredentials");
         return data;
     }
+    @DataProvider(name="InvalidEmailid")
+    public Object[][] invalidEmailId() {
+        ExcelUtility excel = new ExcelUtility();
+        Object[][] data = excel.dataProviderRead("InvalidLoginCredentials");
+        return data;
+    }
 }
