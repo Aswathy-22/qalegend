@@ -72,6 +72,7 @@ public class AddUserPage extends TestHelperUtility {
         enterConfirmPassword(confirmPword);
         enterSalesCommissionPercentage(salesPercentage);
         clickOnSaveButton();
+        wait.hardWait();
         return new ManageUserPage(driver);
     }
 }

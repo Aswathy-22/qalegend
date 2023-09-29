@@ -21,7 +21,6 @@ public class HomePage extends TestHelperUtility {
     public String getUserAccountName() {
         return webElement.getElementText(userAccountName);
     }
-
     public UserManagementPage clickOnUserManagement() {
         webElement.clickOnElement(userManagement);
         return new UserManagementPage(driver);

@@ -33,8 +33,9 @@ public class LoginPage extends TestHelperUtility {
     public void enterPassword(String pWord){
         webElement.enterText(passWord,pWord);
     }
-    public void clickOnLoginButton(){
+    public HomePage clickOnLoginButton(){
         webElement.clickOnElement(loginButton);
+        return new HomePage(driver);
     }
     public void clickOnEndTour(){
         webElement.clickOnElement(endTourButton);

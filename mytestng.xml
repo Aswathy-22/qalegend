@@ -7,9 +7,9 @@
     <test name="Functional Test">
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="com.qalegend.testscripts.ManageUserTest">
+            <class name="com.qalegend.testscripts.AddUserTest">
                 <methods>
-                    <include name="verifyUserDelete"/>
+                    <include name="verifyUserLoginForNewlyCreatedUser"/>
                 </methods>
             </class>
         </classes>

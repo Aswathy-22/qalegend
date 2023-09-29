@@ -59,6 +59,7 @@ public class AddUserTest extends Base {
         List<List<String>> data= ExcelUtility.excelDataReader("LoginPage");
         String userName=data.get(1).get(1);
         String password=data.get(2).get(1);
+        String expectedUserAccountName=firstName+" "+lastName;
         String userAccountName=data.get(3).get(1);
         login=new LoginPage(driver);
         home=login.loginToApplication(userName,password);
@@ -68,9 +69,11 @@ public class AddUserTest extends Base {
         manageUser=addUser.addUserDetails(prefix,firstName,lastName,email,uName,pWord,pWord,salesCommissionPercentage);
         signOut=manageUser.clickOnUserAccountId();
         login=signOut.clickOnSignOutButton();
-        home=login.loginToApplication(userName,password);
+        login.enterUserName(uName);
+        login.enterPassword(pWord);
+        home=login.clickOnLoginButton();
         String actualUserAccountName = home.getUserAccountName();
-        Assert.assertEquals(actualUserAccountName, userAccountName, "user login failed");
+        Assert.assertEquals(actualUserAccountName,expectedUserAccountName, "user login failed");
     }
 }
 
